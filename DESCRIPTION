@@ -1,0 +1,16 @@
+Package: GibbsFlow
+Type: Package
+Title: Gibbs Flow for Approximate Transport 
+Version: 1.0
+Date: 2017-10-04
+Author: Jeremy Heng
+Maintainer: Jeremy Heng <jeremyhengjm@gmail.com>
+Description: This package implements sequential Monte Carlo samplers that use Gibbs flow transport. 
+URL: https://github.com/jeremyhengjm/GibbsFlow
+BugReports: https://github.com/jeremyhengjm/GibbsFlow/issues
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 0.12.9), tictoc
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 7.1.0
