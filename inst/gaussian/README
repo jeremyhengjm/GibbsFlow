@@ -1,7 +1,0 @@
-Toy Gaussian model 
-- Run demo_plotvelocity1d.R to investigate numerical stability of Gibbs velocity field approximation 
-- Run demo_gibbsvelocity.R to investigate stiffness of Gibbs flow
-- Run demo_extreme_obs.R followed by analyze_gibbsflow_integration.R to investigate stiffness in the case of extreme observations
-- Run demo_ais.R, demo_gibbsflow_sis.R, demo_gibbsflow_ais, demo_svgd.R to see how each method performs on this model
-- Run repeat files using run_repeats.R followed by analyse_results.R to compare performance
-- See transportmaps.py for an implementation of the transport maps methodology developed by Youssef Marzouk and his research group. This builds on the TransportMaps Python package http://transportmaps.mit.edu/docs/ 
