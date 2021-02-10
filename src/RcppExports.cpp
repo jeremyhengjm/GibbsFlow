@@ -6,6 +6,1161 @@
 
 using namespace Rcpp;
 
+// banana_logprior
+arma::vec banana_logprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_banana_logprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_logprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// banana_gradlogprior
+arma::mat banana_gradlogprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_banana_gradlogprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_gradlogprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// banana_partialderivative_logprior
+double banana_partialderivative_logprior(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_banana_partialderivative_logprior(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_partialderivative_logprior(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// banana_sampleprior
+arma::mat banana_sampleprior(int n);
+RcppExport SEXP _GibbsFlow_banana_sampleprior(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_sampleprior(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// banana_loglikelihood
+arma::vec banana_loglikelihood(arma::mat x, double like_alpha, double like_beta);
+RcppExport SEXP _GibbsFlow_banana_loglikelihood(SEXP xSEXP, SEXP like_alphaSEXP, SEXP like_betaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type like_alpha(like_alphaSEXP);
+    Rcpp::traits::input_parameter< double >::type like_beta(like_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_loglikelihood(x, like_alpha, like_beta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// banana_gradloglikelihood
+arma::mat banana_gradloglikelihood(arma::mat x, double like_alpha, double like_beta);
+RcppExport SEXP _GibbsFlow_banana_gradloglikelihood(SEXP xSEXP, SEXP like_alphaSEXP, SEXP like_betaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type like_alpha(like_alphaSEXP);
+    Rcpp::traits::input_parameter< double >::type like_beta(like_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_gradloglikelihood(x, like_alpha, like_beta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// banana_partialderivative_loglikelihood
+double banana_partialderivative_loglikelihood(int dim, arma::rowvec x, double like_alpha, double like_beta);
+RcppExport SEXP _GibbsFlow_banana_partialderivative_loglikelihood(SEXP dimSEXP, SEXP xSEXP, SEXP like_alphaSEXP, SEXP like_betaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type like_alpha(like_alphaSEXP);
+    Rcpp::traits::input_parameter< double >::type like_beta(like_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_partialderivative_loglikelihood(dim, x, like_alpha, like_beta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// banana_gibbsflow
+Rcpp::List banana_gibbsflow(double stepsize, double lambda, double derivative_lambda, arma::mat xparticles, arma::vec logdensity, double like_alpha, double like_beta);
+RcppExport SEXP _GibbsFlow_banana_gibbsflow(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP, SEXP like_alphaSEXP, SEXP like_betaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    Rcpp::traits::input_parameter< double >::type like_alpha(like_alphaSEXP);
+    Rcpp::traits::input_parameter< double >::type like_beta(like_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(banana_gibbsflow(stepsize, lambda, derivative_lambda, xparticles, logdensity, like_alpha, like_beta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_artificial_logprior
+arma::vec baseball_artificial_logprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_baseball_artificial_logprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_artificial_logprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_gradlogprior_artificial
+arma::mat baseball_gradlogprior_artificial(arma::mat x);
+RcppExport SEXP _GibbsFlow_baseball_gradlogprior_artificial(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_gradlogprior_artificial(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_logprior
+arma::vec baseball_logprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_baseball_logprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_logprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_gradlogprior
+arma::mat baseball_gradlogprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_baseball_gradlogprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_gradlogprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_sample_artificial_prior
+arma::mat baseball_sample_artificial_prior(int N);
+RcppExport SEXP _GibbsFlow_baseball_sample_artificial_prior(SEXP NSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type N(NSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_sample_artificial_prior(N));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_loglikelihood
+arma::vec baseball_loglikelihood(arma::mat x);
+RcppExport SEXP _GibbsFlow_baseball_loglikelihood(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_loglikelihood(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_gradloglikelihood
+arma::mat baseball_gradloglikelihood(arma::mat x);
+RcppExport SEXP _GibbsFlow_baseball_gradloglikelihood(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_gradloglikelihood(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_gibbsflow
+Rcpp::List baseball_gibbsflow(double stepsize, double lambda, double lambda_next, double derivative_lambda, arma::mat xparticles, arma::vec logdensity);
+RcppExport SEXP _GibbsFlow_baseball_gibbsflow(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP lambda_nextSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda_next(lambda_nextSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_gibbsflow(stepsize, lambda, lambda_next, derivative_lambda, xparticles, logdensity));
+    return rcpp_result_gen;
+END_RCPP
+}
+// baseball_gibbsvelocity
+arma::mat baseball_gibbsvelocity(double time, arma::mat xparticles, double exponent);
+RcppExport SEXP _GibbsFlow_baseball_gibbsvelocity(SEXP timeSEXP, SEXP xparticlesSEXP, SEXP exponentSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    rcpp_result_gen = Rcpp::wrap(baseball_gibbsvelocity(time, xparticles, exponent));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_logprior
+arma::vec coxprocess_logprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_coxprocess_logprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_logprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gradlogprior
+arma::mat coxprocess_gradlogprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_coxprocess_gradlogprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gradlogprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_partialderivative_logprior
+double coxprocess_partialderivative_logprior(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_coxprocess_partialderivative_logprior(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_partialderivative_logprior(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_sampleprior
+arma::mat coxprocess_sampleprior(int n);
+RcppExport SEXP _GibbsFlow_coxprocess_sampleprior(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_sampleprior(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_logprior_conditional
+arma::vec coxprocess_logprior_conditional(int dim, arma::vec x, arma::vec other_x);
+RcppExport SEXP _GibbsFlow_coxprocess_logprior_conditional(SEXP dimSEXP, SEXP xSEXP, SEXP other_xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type other_x(other_xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_logprior_conditional(dim, x, other_x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_loglikelihood
+arma::vec coxprocess_loglikelihood(arma::mat x, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_loglikelihood(SEXP xSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_loglikelihood(x, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_loglikelihood_term
+arma::vec coxprocess_loglikelihood_term(int dim, arma::vec x, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_loglikelihood_term(SEXP dimSEXP, SEXP xSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_loglikelihood_term(dim, x, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gradloglikelihood
+arma::mat coxprocess_gradloglikelihood(arma::mat x, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_gradloglikelihood(SEXP xSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gradloglikelihood(x, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_partialderivative_loglikelihood
+double coxprocess_partialderivative_loglikelihood(int dim, arma::rowvec x, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_partialderivative_loglikelihood(SEXP dimSEXP, SEXP xSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_partialderivative_loglikelihood(dim, x, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gibbsflow
+Rcpp::List coxprocess_gibbsflow(double stepsize, double lambda, double derivative_lambda, arma::mat xparticles, arma::vec logdensity, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_gibbsflow(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gibbsflow(stepsize, lambda, derivative_lambda, xparticles, logdensity, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gibbsvelocity
+arma::mat coxprocess_gibbsvelocity(double time, arma::mat xparticles, double exponent, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_gibbsvelocity(SEXP timeSEXP, SEXP xparticlesSEXP, SEXP exponentSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gibbsvelocity(time, xparticles, exponent, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_stein_variational_importance_sampling
+Rcpp::List coxprocess_stein_variational_importance_sampling(int nfparticles, int nlparticles, int niterations, double stepsize, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_stein_variational_importance_sampling(SEXP nfparticlesSEXP, SEXP nlparticlesSEXP, SEXP niterationsSEXP, SEXP stepsizeSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type nfparticles(nfparticlesSEXP);
+    Rcpp::traits::input_parameter< int >::type nlparticles(nlparticlesSEXP);
+    Rcpp::traits::input_parameter< int >::type niterations(niterationsSEXP);
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_stein_variational_importance_sampling(nfparticles, nlparticles, niterations, stepsize, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_log_ep_proposal
+arma::vec coxprocess_log_ep_proposal(arma::mat x);
+RcppExport SEXP _GibbsFlow_coxprocess_log_ep_proposal(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_log_ep_proposal(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gradlog_ep_proposal
+arma::mat coxprocess_gradlog_ep_proposal(arma::mat x);
+RcppExport SEXP _GibbsFlow_coxprocess_gradlog_ep_proposal(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gradlog_ep_proposal(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_sample_ep_proposal
+arma::mat coxprocess_sample_ep_proposal(int n);
+RcppExport SEXP _GibbsFlow_coxprocess_sample_ep_proposal(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_sample_ep_proposal(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_log_ep_proposal_conditional
+arma::vec coxprocess_log_ep_proposal_conditional(int dim, arma::vec x, arma::vec other_x, arma::uvec other_index);
+RcppExport SEXP _GibbsFlow_coxprocess_log_ep_proposal_conditional(SEXP dimSEXP, SEXP xSEXP, SEXP other_xSEXP, SEXP other_indexSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type other_x(other_xSEXP);
+    Rcpp::traits::input_parameter< arma::uvec >::type other_index(other_indexSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_log_ep_proposal_conditional(dim, x, other_x, other_index));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_partialderivative_log_ep_proposal
+double coxprocess_partialderivative_log_ep_proposal(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_coxprocess_partialderivative_log_ep_proposal(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_partialderivative_log_ep_proposal(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gibbsflow_ep_proposal
+Rcpp::List coxprocess_gibbsflow_ep_proposal(double stepsize, double lambda, double derivative_lambda, arma::mat xparticles, arma::vec logdensity, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_gibbsflow_ep_proposal(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gibbsflow_ep_proposal(stepsize, lambda, derivative_lambda, xparticles, logdensity, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gibbsvelocity_ep_proposal
+arma::mat coxprocess_gibbsvelocity_ep_proposal(double time, arma::mat xparticles, double exponent, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_gibbsvelocity_ep_proposal(SEXP timeSEXP, SEXP xparticlesSEXP, SEXP exponentSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gibbsvelocity_ep_proposal(time, xparticles, exponent, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_log_vi_proposal
+arma::vec coxprocess_log_vi_proposal(arma::mat x);
+RcppExport SEXP _GibbsFlow_coxprocess_log_vi_proposal(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_log_vi_proposal(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gradlog_vi_proposal
+arma::mat coxprocess_gradlog_vi_proposal(arma::mat x);
+RcppExport SEXP _GibbsFlow_coxprocess_gradlog_vi_proposal(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gradlog_vi_proposal(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_sample_vi_proposal
+arma::mat coxprocess_sample_vi_proposal(int n);
+RcppExport SEXP _GibbsFlow_coxprocess_sample_vi_proposal(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_sample_vi_proposal(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_partialderivative_log_vi_proposal
+double coxprocess_partialderivative_log_vi_proposal(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_coxprocess_partialderivative_log_vi_proposal(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_partialderivative_log_vi_proposal(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gibbsflow_vi_proposal
+Rcpp::List coxprocess_gibbsflow_vi_proposal(double stepsize, double lambda, double derivative_lambda, arma::mat xparticles, arma::vec logdensity, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_gibbsflow_vi_proposal(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gibbsflow_vi_proposal(stepsize, lambda, derivative_lambda, xparticles, logdensity, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// coxprocess_gibbsvelocity_vi_proposal
+arma::mat coxprocess_gibbsvelocity_vi_proposal(double time, arma::mat xparticles, double exponent, arma::vec counts);
+RcppExport SEXP _GibbsFlow_coxprocess_gibbsvelocity_vi_proposal(SEXP timeSEXP, SEXP xparticlesSEXP, SEXP exponentSEXP, SEXP countsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type counts(countsSEXP);
+    rcpp_result_gen = Rcpp::wrap(coxprocess_gibbsvelocity_vi_proposal(time, xparticles, exponent, counts));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_logprior
+arma::vec gaussian_logprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_gaussian_logprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_logprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_gradlogprior
+arma::mat gaussian_gradlogprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_gaussian_gradlogprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_gradlogprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_partialderivative_logprior
+double gaussian_partialderivative_logprior(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_gaussian_partialderivative_logprior(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_partialderivative_logprior(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_sampleprior
+arma::mat gaussian_sampleprior(int n);
+RcppExport SEXP _GibbsFlow_gaussian_sampleprior(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_sampleprior(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_loglikelihood
+arma::vec gaussian_loglikelihood(arma::mat x);
+RcppExport SEXP _GibbsFlow_gaussian_loglikelihood(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_loglikelihood(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_gradloglikelihood
+arma::mat gaussian_gradloglikelihood(arma::mat x);
+RcppExport SEXP _GibbsFlow_gaussian_gradloglikelihood(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_gradloglikelihood(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_partialderivative_loglikelihood
+double gaussian_partialderivative_loglikelihood(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_gaussian_partialderivative_loglikelihood(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_partialderivative_loglikelihood(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_posterior_cov
+arma::mat gaussian_posterior_cov(double lambda);
+RcppExport SEXP _GibbsFlow_gaussian_posterior_cov(SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_posterior_cov(lambda));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_posterior_mean
+arma::rowvec gaussian_posterior_mean(double lambda);
+RcppExport SEXP _GibbsFlow_gaussian_posterior_mean(SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_posterior_mean(lambda));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_log_normconst
+double gaussian_log_normconst(double lambda);
+RcppExport SEXP _GibbsFlow_gaussian_log_normconst(SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_log_normconst(lambda));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_logposterior
+arma::vec gaussian_logposterior(arma::mat x, double lambda);
+RcppExport SEXP _GibbsFlow_gaussian_logposterior(SEXP xSEXP, SEXP lambdaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_logposterior(x, lambda));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_gibbsflow
+Rcpp::List gaussian_gibbsflow(double stepsize, double lambda, double derivative_lambda, arma::mat xparticles, arma::vec logdensity);
+RcppExport SEXP _GibbsFlow_gaussian_gibbsflow(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_gibbsflow(stepsize, lambda, derivative_lambda, xparticles, logdensity));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_gibbsvelocity
+arma::rowvec gaussian_gibbsvelocity(double time, arma::rowvec xpoint, double exponent);
+RcppExport SEXP _GibbsFlow_gaussian_gibbsvelocity(SEXP timeSEXP, SEXP xpointSEXP, SEXP exponentSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type xpoint(xpointSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_gibbsvelocity(time, xpoint, exponent));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gaussian_stein_variational_importance_sampling
+Rcpp::List gaussian_stein_variational_importance_sampling(int nfparticles, int nlparticles, int niterations, double stepsize, double bandwidth);
+RcppExport SEXP _GibbsFlow_gaussian_stein_variational_importance_sampling(SEXP nfparticlesSEXP, SEXP nlparticlesSEXP, SEXP niterationsSEXP, SEXP stepsizeSEXP, SEXP bandwidthSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type nfparticles(nfparticlesSEXP);
+    Rcpp::traits::input_parameter< int >::type nlparticles(nlparticlesSEXP);
+    Rcpp::traits::input_parameter< int >::type niterations(niterationsSEXP);
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type bandwidth(bandwidthSEXP);
+    rcpp_result_gen = Rcpp::wrap(gaussian_stein_variational_importance_sampling(nfparticles, nlparticles, niterations, stepsize, bandwidth));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_logprior
+arma::vec mixtureexample_logprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_mixtureexample_logprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_logprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_gradlogprior
+arma::mat mixtureexample_gradlogprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_mixtureexample_gradlogprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_gradlogprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_partialderivative_logprior
+double mixtureexample_partialderivative_logprior(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_mixtureexample_partialderivative_logprior(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_partialderivative_logprior(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_sampleprior
+arma::mat mixtureexample_sampleprior(int n);
+RcppExport SEXP _GibbsFlow_mixtureexample_sampleprior(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_sampleprior(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_loglikelihood
+arma::vec mixtureexample_loglikelihood(arma::mat x);
+RcppExport SEXP _GibbsFlow_mixtureexample_loglikelihood(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_loglikelihood(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_gradloglikelihood
+arma::mat mixtureexample_gradloglikelihood(arma::mat x);
+RcppExport SEXP _GibbsFlow_mixtureexample_gradloglikelihood(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_gradloglikelihood(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_partialderivative_loglikelihood
+double mixtureexample_partialderivative_loglikelihood(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_mixtureexample_partialderivative_loglikelihood(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_partialderivative_loglikelihood(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_posterior_cov
+arma::mat mixtureexample_posterior_cov(int component);
+RcppExport SEXP _GibbsFlow_mixtureexample_posterior_cov(SEXP componentSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type component(componentSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_posterior_cov(component));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_posterior_mean
+arma::rowvec mixtureexample_posterior_mean(int component);
+RcppExport SEXP _GibbsFlow_mixtureexample_posterior_mean(SEXP componentSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type component(componentSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_posterior_mean(component));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_log_normconst
+double mixtureexample_log_normconst();
+RcppExport SEXP _GibbsFlow_mixtureexample_log_normconst() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_log_normconst());
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_logposterior
+arma::vec mixtureexample_logposterior(arma::mat x);
+RcppExport SEXP _GibbsFlow_mixtureexample_logposterior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_logposterior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_gibbsflow
+Rcpp::List mixtureexample_gibbsflow(double stepsize, double lambda, double derivative_lambda, arma::mat xparticles, arma::vec logdensity);
+RcppExport SEXP _GibbsFlow_mixtureexample_gibbsflow(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_gibbsflow(stepsize, lambda, derivative_lambda, xparticles, logdensity));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixtureexample_gibbsvelocity
+arma::rowvec mixtureexample_gibbsvelocity(double time, arma::rowvec xpoint, double exponent);
+RcppExport SEXP _GibbsFlow_mixtureexample_gibbsvelocity(SEXP timeSEXP, SEXP xpointSEXP, SEXP exponentSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type xpoint(xpointSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixtureexample_gibbsvelocity(time, xpoint, exponent));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_logprior
+arma::vec mixturemodel_logprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_mixturemodel_logprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_logprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_gradlogprior
+arma::mat mixturemodel_gradlogprior(arma::mat x);
+RcppExport SEXP _GibbsFlow_mixturemodel_gradlogprior(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_gradlogprior(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_partialderivative_logprior
+double mixturemodel_partialderivative_logprior(int dim, arma::rowvec x);
+RcppExport SEXP _GibbsFlow_mixturemodel_partialderivative_logprior(SEXP dimSEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_partialderivative_logprior(dim, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_sampleprior
+arma::mat mixturemodel_sampleprior(int n);
+RcppExport SEXP _GibbsFlow_mixturemodel_sampleprior(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_sampleprior(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_loglikelihood
+arma::vec mixturemodel_loglikelihood(arma::mat x, arma::vec observations, arma::vec mixturelogweights);
+RcppExport SEXP _GibbsFlow_mixturemodel_loglikelihood(SEXP xSEXP, SEXP observationsSEXP, SEXP mixturelogweightsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type observations(observationsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type mixturelogweights(mixturelogweightsSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_loglikelihood(x, observations, mixturelogweights));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_gradloglikelihood
+arma::mat mixturemodel_gradloglikelihood(arma::mat x, arma::vec observations, arma::vec mixturelogweights);
+RcppExport SEXP _GibbsFlow_mixturemodel_gradloglikelihood(SEXP xSEXP, SEXP observationsSEXP, SEXP mixturelogweightsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type observations(observationsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type mixturelogweights(mixturelogweightsSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_gradloglikelihood(x, observations, mixturelogweights));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_partialderivative_loglikelihood
+double mixturemodel_partialderivative_loglikelihood(int dim, arma::rowvec x, arma::vec observations, arma::vec mixturelogweights);
+RcppExport SEXP _GibbsFlow_mixturemodel_partialderivative_loglikelihood(SEXP dimSEXP, SEXP xSEXP, SEXP observationsSEXP, SEXP mixturelogweightsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type dim(dimSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type observations(observationsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type mixturelogweights(mixturelogweightsSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_partialderivative_loglikelihood(dim, x, observations, mixturelogweights));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_gibbsflow
+Rcpp::List mixturemodel_gibbsflow(double stepsize, double lambda, double derivative_lambda, arma::mat xparticles, arma::vec logdensity, arma::vec observations, arma::vec mixturelogweights);
+RcppExport SEXP _GibbsFlow_mixturemodel_gibbsflow(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP, SEXP observationsSEXP, SEXP mixturelogweightsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type observations(observationsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type mixturelogweights(mixturelogweightsSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_gibbsflow(stepsize, lambda, derivative_lambda, xparticles, logdensity, observations, mixturelogweights));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mixturemodel_gibbsvelocity
+arma::rowvec mixturemodel_gibbsvelocity(double time, arma::rowvec xpoint, double exponent, arma::vec observations, arma::vec mixturelogweights);
+RcppExport SEXP _GibbsFlow_mixturemodel_gibbsvelocity(SEXP timeSEXP, SEXP xpointSEXP, SEXP exponentSEXP, SEXP observationsSEXP, SEXP mixturelogweightsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type xpoint(xpointSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type observations(observationsSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type mixturelogweights(mixturelogweightsSEXP);
+    rcpp_result_gen = Rcpp::wrap(mixturemodel_gibbsvelocity(time, xpoint, exponent, observations, mixturelogweights));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_artificial_logprior
+arma::vec varcomp_artificial_logprior(arma::mat x, int dimension);
+RcppExport SEXP _GibbsFlow_varcomp_artificial_logprior(SEXP xSEXP, SEXP dimensionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_artificial_logprior(x, dimension));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_gradlogprior_artificial
+arma::mat varcomp_gradlogprior_artificial(arma::mat x, int dimension);
+RcppExport SEXP _GibbsFlow_varcomp_gradlogprior_artificial(SEXP xSEXP, SEXP dimensionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_gradlogprior_artificial(x, dimension));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_logprior
+arma::vec varcomp_logprior(arma::mat x, int dimension);
+RcppExport SEXP _GibbsFlow_varcomp_logprior(SEXP xSEXP, SEXP dimensionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_logprior(x, dimension));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_gradlogprior
+arma::mat varcomp_gradlogprior(arma::mat x, int dimension);
+RcppExport SEXP _GibbsFlow_varcomp_gradlogprior(SEXP xSEXP, SEXP dimensionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_gradlogprior(x, dimension));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_sample_artificial_prior
+arma::mat varcomp_sample_artificial_prior(int N, int dimension);
+RcppExport SEXP _GibbsFlow_varcomp_sample_artificial_prior(SEXP NSEXP, SEXP dimensionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type N(NSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_sample_artificial_prior(N, dimension));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_loglikelihood
+arma::vec varcomp_loglikelihood(arma::mat x, arma::mat dataset);
+RcppExport SEXP _GibbsFlow_varcomp_loglikelihood(SEXP xSEXP, SEXP datasetSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type dataset(datasetSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_loglikelihood(x, dataset));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_gradloglikelihood
+arma::mat varcomp_gradloglikelihood(arma::mat x, arma::vec dataset_rowsums, int dimension, int nrepetitions);
+RcppExport SEXP _GibbsFlow_varcomp_gradloglikelihood(SEXP xSEXP, SEXP dataset_rowsumsSEXP, SEXP dimensionSEXP, SEXP nrepetitionsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type dataset_rowsums(dataset_rowsumsSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    Rcpp::traits::input_parameter< int >::type nrepetitions(nrepetitionsSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_gradloglikelihood(x, dataset_rowsums, dimension, nrepetitions));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_gibbsflow
+Rcpp::List varcomp_gibbsflow(double stepsize, double lambda, double lambda_next, double derivative_lambda, arma::mat xparticles, arma::vec logdensity, arma::vec dataset_rowsums, int dimension);
+RcppExport SEXP _GibbsFlow_varcomp_gibbsflow(SEXP stepsizeSEXP, SEXP lambdaSEXP, SEXP lambda_nextSEXP, SEXP derivative_lambdaSEXP, SEXP xparticlesSEXP, SEXP logdensitySEXP, SEXP dataset_rowsumsSEXP, SEXP dimensionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type stepsize(stepsizeSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type lambda_next(lambda_nextSEXP);
+    Rcpp::traits::input_parameter< double >::type derivative_lambda(derivative_lambdaSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type logdensity(logdensitySEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type dataset_rowsums(dataset_rowsumsSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_gibbsflow(stepsize, lambda, lambda_next, derivative_lambda, xparticles, logdensity, dataset_rowsums, dimension));
+    return rcpp_result_gen;
+END_RCPP
+}
+// varcomp_gibbsvelocity
+arma::mat varcomp_gibbsvelocity(double time, arma::mat xparticles, double exponent, arma::vec dataset_rowsums, int dimension);
+RcppExport SEXP _GibbsFlow_varcomp_gibbsvelocity(SEXP timeSEXP, SEXP xparticlesSEXP, SEXP exponentSEXP, SEXP dataset_rowsumsSEXP, SEXP dimensionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type xparticles(xparticlesSEXP);
+    Rcpp::traits::input_parameter< double >::type exponent(exponentSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type dataset_rowsums(dataset_rowsumsSEXP);
+    Rcpp::traits::input_parameter< int >::type dimension(dimensionSEXP);
+    rcpp_result_gen = Rcpp::wrap(varcomp_gibbsvelocity(time, xparticles, exponent, dataset_rowsums, dimension));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mvnpdf
+arma::vec mvnpdf(arma::mat x, arma::rowvec mu, arma::mat sigma);
+RcppExport SEXP _GibbsFlow_mvnpdf(SEXP xSEXP, SEXP muSEXP, SEXP sigmaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type sigma(sigmaSEXP);
+    rcpp_result_gen = Rcpp::wrap(mvnpdf(x, mu, sigma));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mvn_cholesky_factor
+Rcpp::List mvn_cholesky_factor(arma::mat sigma);
+RcppExport SEXP _GibbsFlow_mvn_cholesky_factor(SEXP sigmaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type sigma(sigmaSEXP);
+    rcpp_result_gen = Rcpp::wrap(mvn_cholesky_factor(sigma));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mvnpdf_chol
+arma::vec mvnpdf_chol(arma::mat x, arma::rowvec mu, arma::mat rooti, double rootisum);
+RcppExport SEXP _GibbsFlow_mvnpdf_chol(SEXP xSEXP, SEXP muSEXP, SEXP rootiSEXP, SEXP rootisumSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type rooti(rootiSEXP);
+    Rcpp::traits::input_parameter< double >::type rootisum(rootisumSEXP);
+    rcpp_result_gen = Rcpp::wrap(mvnpdf_chol(x, mu, rooti, rootisum));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gradmvnpdf
+arma::mat gradmvnpdf(arma::mat x, arma::rowvec mu, arma::mat precision);
+RcppExport SEXP _GibbsFlow_gradmvnpdf(SEXP xSEXP, SEXP muSEXP, SEXP precisionSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type precision(precisionSEXP);
+    rcpp_result_gen = Rcpp::wrap(gradmvnpdf(x, mu, precision));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mvnrnd
+arma::mat mvnrnd(int n, arma::rowvec mu, arma::mat sigma);
+RcppExport SEXP _GibbsFlow_mvnrnd(SEXP nSEXP, SEXP muSEXP, SEXP sigmaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type sigma(sigmaSEXP);
+    rcpp_result_gen = Rcpp::wrap(mvnrnd(n, mu, sigma));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mvnrnd_chol
+arma::mat mvnrnd_chol(int n, arma::rowvec mu, arma::mat chol);
+RcppExport SEXP _GibbsFlow_mvnrnd_chol(SEXP nSEXP, SEXP muSEXP, SEXP cholSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::rowvec >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type chol(cholSEXP);
+    rcpp_result_gen = Rcpp::wrap(mvnrnd_chol(n, mu, chol));
+    return rcpp_result_gen;
+END_RCPP
+}
 // systematic_resampling
 arma::vec systematic_resampling(const arma::vec& normweights, int nparticles, double uniform);
 RcppExport SEXP _GibbsFlow_systematic_resampling(SEXP normweightsSEXP, SEXP nparticlesSEXP, SEXP uniformSEXP) {
@@ -21,6 +1176,99 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_GibbsFlow_banana_logprior", (DL_FUNC) &_GibbsFlow_banana_logprior, 1},
+    {"_GibbsFlow_banana_gradlogprior", (DL_FUNC) &_GibbsFlow_banana_gradlogprior, 1},
+    {"_GibbsFlow_banana_partialderivative_logprior", (DL_FUNC) &_GibbsFlow_banana_partialderivative_logprior, 2},
+    {"_GibbsFlow_banana_sampleprior", (DL_FUNC) &_GibbsFlow_banana_sampleprior, 1},
+    {"_GibbsFlow_banana_loglikelihood", (DL_FUNC) &_GibbsFlow_banana_loglikelihood, 3},
+    {"_GibbsFlow_banana_gradloglikelihood", (DL_FUNC) &_GibbsFlow_banana_gradloglikelihood, 3},
+    {"_GibbsFlow_banana_partialderivative_loglikelihood", (DL_FUNC) &_GibbsFlow_banana_partialderivative_loglikelihood, 4},
+    {"_GibbsFlow_banana_gibbsflow", (DL_FUNC) &_GibbsFlow_banana_gibbsflow, 7},
+    {"_GibbsFlow_baseball_artificial_logprior", (DL_FUNC) &_GibbsFlow_baseball_artificial_logprior, 1},
+    {"_GibbsFlow_baseball_gradlogprior_artificial", (DL_FUNC) &_GibbsFlow_baseball_gradlogprior_artificial, 1},
+    {"_GibbsFlow_baseball_logprior", (DL_FUNC) &_GibbsFlow_baseball_logprior, 1},
+    {"_GibbsFlow_baseball_gradlogprior", (DL_FUNC) &_GibbsFlow_baseball_gradlogprior, 1},
+    {"_GibbsFlow_baseball_sample_artificial_prior", (DL_FUNC) &_GibbsFlow_baseball_sample_artificial_prior, 1},
+    {"_GibbsFlow_baseball_loglikelihood", (DL_FUNC) &_GibbsFlow_baseball_loglikelihood, 1},
+    {"_GibbsFlow_baseball_gradloglikelihood", (DL_FUNC) &_GibbsFlow_baseball_gradloglikelihood, 1},
+    {"_GibbsFlow_baseball_gibbsflow", (DL_FUNC) &_GibbsFlow_baseball_gibbsflow, 6},
+    {"_GibbsFlow_baseball_gibbsvelocity", (DL_FUNC) &_GibbsFlow_baseball_gibbsvelocity, 3},
+    {"_GibbsFlow_coxprocess_logprior", (DL_FUNC) &_GibbsFlow_coxprocess_logprior, 1},
+    {"_GibbsFlow_coxprocess_gradlogprior", (DL_FUNC) &_GibbsFlow_coxprocess_gradlogprior, 1},
+    {"_GibbsFlow_coxprocess_partialderivative_logprior", (DL_FUNC) &_GibbsFlow_coxprocess_partialderivative_logprior, 2},
+    {"_GibbsFlow_coxprocess_sampleprior", (DL_FUNC) &_GibbsFlow_coxprocess_sampleprior, 1},
+    {"_GibbsFlow_coxprocess_logprior_conditional", (DL_FUNC) &_GibbsFlow_coxprocess_logprior_conditional, 3},
+    {"_GibbsFlow_coxprocess_loglikelihood", (DL_FUNC) &_GibbsFlow_coxprocess_loglikelihood, 2},
+    {"_GibbsFlow_coxprocess_loglikelihood_term", (DL_FUNC) &_GibbsFlow_coxprocess_loglikelihood_term, 3},
+    {"_GibbsFlow_coxprocess_gradloglikelihood", (DL_FUNC) &_GibbsFlow_coxprocess_gradloglikelihood, 2},
+    {"_GibbsFlow_coxprocess_partialderivative_loglikelihood", (DL_FUNC) &_GibbsFlow_coxprocess_partialderivative_loglikelihood, 3},
+    {"_GibbsFlow_coxprocess_gibbsflow", (DL_FUNC) &_GibbsFlow_coxprocess_gibbsflow, 6},
+    {"_GibbsFlow_coxprocess_gibbsvelocity", (DL_FUNC) &_GibbsFlow_coxprocess_gibbsvelocity, 4},
+    {"_GibbsFlow_coxprocess_stein_variational_importance_sampling", (DL_FUNC) &_GibbsFlow_coxprocess_stein_variational_importance_sampling, 5},
+    {"_GibbsFlow_coxprocess_log_ep_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_log_ep_proposal, 1},
+    {"_GibbsFlow_coxprocess_gradlog_ep_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_gradlog_ep_proposal, 1},
+    {"_GibbsFlow_coxprocess_sample_ep_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_sample_ep_proposal, 1},
+    {"_GibbsFlow_coxprocess_log_ep_proposal_conditional", (DL_FUNC) &_GibbsFlow_coxprocess_log_ep_proposal_conditional, 4},
+    {"_GibbsFlow_coxprocess_partialderivative_log_ep_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_partialderivative_log_ep_proposal, 2},
+    {"_GibbsFlow_coxprocess_gibbsflow_ep_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_gibbsflow_ep_proposal, 6},
+    {"_GibbsFlow_coxprocess_gibbsvelocity_ep_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_gibbsvelocity_ep_proposal, 4},
+    {"_GibbsFlow_coxprocess_log_vi_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_log_vi_proposal, 1},
+    {"_GibbsFlow_coxprocess_gradlog_vi_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_gradlog_vi_proposal, 1},
+    {"_GibbsFlow_coxprocess_sample_vi_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_sample_vi_proposal, 1},
+    {"_GibbsFlow_coxprocess_partialderivative_log_vi_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_partialderivative_log_vi_proposal, 2},
+    {"_GibbsFlow_coxprocess_gibbsflow_vi_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_gibbsflow_vi_proposal, 6},
+    {"_GibbsFlow_coxprocess_gibbsvelocity_vi_proposal", (DL_FUNC) &_GibbsFlow_coxprocess_gibbsvelocity_vi_proposal, 4},
+    {"_GibbsFlow_gaussian_logprior", (DL_FUNC) &_GibbsFlow_gaussian_logprior, 1},
+    {"_GibbsFlow_gaussian_gradlogprior", (DL_FUNC) &_GibbsFlow_gaussian_gradlogprior, 1},
+    {"_GibbsFlow_gaussian_partialderivative_logprior", (DL_FUNC) &_GibbsFlow_gaussian_partialderivative_logprior, 2},
+    {"_GibbsFlow_gaussian_sampleprior", (DL_FUNC) &_GibbsFlow_gaussian_sampleprior, 1},
+    {"_GibbsFlow_gaussian_loglikelihood", (DL_FUNC) &_GibbsFlow_gaussian_loglikelihood, 1},
+    {"_GibbsFlow_gaussian_gradloglikelihood", (DL_FUNC) &_GibbsFlow_gaussian_gradloglikelihood, 1},
+    {"_GibbsFlow_gaussian_partialderivative_loglikelihood", (DL_FUNC) &_GibbsFlow_gaussian_partialderivative_loglikelihood, 2},
+    {"_GibbsFlow_gaussian_posterior_cov", (DL_FUNC) &_GibbsFlow_gaussian_posterior_cov, 1},
+    {"_GibbsFlow_gaussian_posterior_mean", (DL_FUNC) &_GibbsFlow_gaussian_posterior_mean, 1},
+    {"_GibbsFlow_gaussian_log_normconst", (DL_FUNC) &_GibbsFlow_gaussian_log_normconst, 1},
+    {"_GibbsFlow_gaussian_logposterior", (DL_FUNC) &_GibbsFlow_gaussian_logposterior, 2},
+    {"_GibbsFlow_gaussian_gibbsflow", (DL_FUNC) &_GibbsFlow_gaussian_gibbsflow, 5},
+    {"_GibbsFlow_gaussian_gibbsvelocity", (DL_FUNC) &_GibbsFlow_gaussian_gibbsvelocity, 3},
+    {"_GibbsFlow_gaussian_stein_variational_importance_sampling", (DL_FUNC) &_GibbsFlow_gaussian_stein_variational_importance_sampling, 5},
+    {"_GibbsFlow_mixtureexample_logprior", (DL_FUNC) &_GibbsFlow_mixtureexample_logprior, 1},
+    {"_GibbsFlow_mixtureexample_gradlogprior", (DL_FUNC) &_GibbsFlow_mixtureexample_gradlogprior, 1},
+    {"_GibbsFlow_mixtureexample_partialderivative_logprior", (DL_FUNC) &_GibbsFlow_mixtureexample_partialderivative_logprior, 2},
+    {"_GibbsFlow_mixtureexample_sampleprior", (DL_FUNC) &_GibbsFlow_mixtureexample_sampleprior, 1},
+    {"_GibbsFlow_mixtureexample_loglikelihood", (DL_FUNC) &_GibbsFlow_mixtureexample_loglikelihood, 1},
+    {"_GibbsFlow_mixtureexample_gradloglikelihood", (DL_FUNC) &_GibbsFlow_mixtureexample_gradloglikelihood, 1},
+    {"_GibbsFlow_mixtureexample_partialderivative_loglikelihood", (DL_FUNC) &_GibbsFlow_mixtureexample_partialderivative_loglikelihood, 2},
+    {"_GibbsFlow_mixtureexample_posterior_cov", (DL_FUNC) &_GibbsFlow_mixtureexample_posterior_cov, 1},
+    {"_GibbsFlow_mixtureexample_posterior_mean", (DL_FUNC) &_GibbsFlow_mixtureexample_posterior_mean, 1},
+    {"_GibbsFlow_mixtureexample_log_normconst", (DL_FUNC) &_GibbsFlow_mixtureexample_log_normconst, 0},
+    {"_GibbsFlow_mixtureexample_logposterior", (DL_FUNC) &_GibbsFlow_mixtureexample_logposterior, 1},
+    {"_GibbsFlow_mixtureexample_gibbsflow", (DL_FUNC) &_GibbsFlow_mixtureexample_gibbsflow, 5},
+    {"_GibbsFlow_mixtureexample_gibbsvelocity", (DL_FUNC) &_GibbsFlow_mixtureexample_gibbsvelocity, 3},
+    {"_GibbsFlow_mixturemodel_logprior", (DL_FUNC) &_GibbsFlow_mixturemodel_logprior, 1},
+    {"_GibbsFlow_mixturemodel_gradlogprior", (DL_FUNC) &_GibbsFlow_mixturemodel_gradlogprior, 1},
+    {"_GibbsFlow_mixturemodel_partialderivative_logprior", (DL_FUNC) &_GibbsFlow_mixturemodel_partialderivative_logprior, 2},
+    {"_GibbsFlow_mixturemodel_sampleprior", (DL_FUNC) &_GibbsFlow_mixturemodel_sampleprior, 1},
+    {"_GibbsFlow_mixturemodel_loglikelihood", (DL_FUNC) &_GibbsFlow_mixturemodel_loglikelihood, 3},
+    {"_GibbsFlow_mixturemodel_gradloglikelihood", (DL_FUNC) &_GibbsFlow_mixturemodel_gradloglikelihood, 3},
+    {"_GibbsFlow_mixturemodel_partialderivative_loglikelihood", (DL_FUNC) &_GibbsFlow_mixturemodel_partialderivative_loglikelihood, 4},
+    {"_GibbsFlow_mixturemodel_gibbsflow", (DL_FUNC) &_GibbsFlow_mixturemodel_gibbsflow, 7},
+    {"_GibbsFlow_mixturemodel_gibbsvelocity", (DL_FUNC) &_GibbsFlow_mixturemodel_gibbsvelocity, 5},
+    {"_GibbsFlow_varcomp_artificial_logprior", (DL_FUNC) &_GibbsFlow_varcomp_artificial_logprior, 2},
+    {"_GibbsFlow_varcomp_gradlogprior_artificial", (DL_FUNC) &_GibbsFlow_varcomp_gradlogprior_artificial, 2},
+    {"_GibbsFlow_varcomp_logprior", (DL_FUNC) &_GibbsFlow_varcomp_logprior, 2},
+    {"_GibbsFlow_varcomp_gradlogprior", (DL_FUNC) &_GibbsFlow_varcomp_gradlogprior, 2},
+    {"_GibbsFlow_varcomp_sample_artificial_prior", (DL_FUNC) &_GibbsFlow_varcomp_sample_artificial_prior, 2},
+    {"_GibbsFlow_varcomp_loglikelihood", (DL_FUNC) &_GibbsFlow_varcomp_loglikelihood, 2},
+    {"_GibbsFlow_varcomp_gradloglikelihood", (DL_FUNC) &_GibbsFlow_varcomp_gradloglikelihood, 4},
+    {"_GibbsFlow_varcomp_gibbsflow", (DL_FUNC) &_GibbsFlow_varcomp_gibbsflow, 8},
+    {"_GibbsFlow_varcomp_gibbsvelocity", (DL_FUNC) &_GibbsFlow_varcomp_gibbsvelocity, 5},
+    {"_GibbsFlow_mvnpdf", (DL_FUNC) &_GibbsFlow_mvnpdf, 3},
+    {"_GibbsFlow_mvn_cholesky_factor", (DL_FUNC) &_GibbsFlow_mvn_cholesky_factor, 1},
+    {"_GibbsFlow_mvnpdf_chol", (DL_FUNC) &_GibbsFlow_mvnpdf_chol, 4},
+    {"_GibbsFlow_gradmvnpdf", (DL_FUNC) &_GibbsFlow_gradmvnpdf, 3},
+    {"_GibbsFlow_mvnrnd", (DL_FUNC) &_GibbsFlow_mvnrnd, 3},
+    {"_GibbsFlow_mvnrnd_chol", (DL_FUNC) &_GibbsFlow_mvnrnd_chol, 3},
     {"_GibbsFlow_systematic_resampling", (DL_FUNC) &_GibbsFlow_systematic_resampling, 3},
     {NULL, NULL, 0}
 };
