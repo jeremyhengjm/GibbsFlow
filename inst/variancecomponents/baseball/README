@@ -1,0 +1,4 @@
+Variance component model on baseball dataset
+- Run demo_gibbsvelocity.R to investigate stiffness of Gibbs flow
+- Run demo_ais.R, demo_gibbsflow_sis.R and demo_gibbsflow_ais.R files to see how each method performs on this model
+- Run repeat files using repeats.R followed by analyse_results.R to compare performance

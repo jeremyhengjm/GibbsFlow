@@ -1,0 +1,5 @@
+Variance component model on simulated datasets
+- Run demo_ais.R, demo_gibbsflow_sis.R and demo_gibbsflow_ais.R to see how each method performs on this model
+- Run demo_gibbsvelocity files followed by analyse_gibbsflow_integration.R to investigate stiffness of Gibbs flow
+- Run demo_gibbsflow_sis.R and demo_gibbsflow_ais.R for various dimensions followed by analyse_scaling_normvelocity.R to examine how the norm of the Gibbs velocity field behaves with dimension
+- Run repeat files using repeats.R followed by analyse_scaling_results.R to compare performance
