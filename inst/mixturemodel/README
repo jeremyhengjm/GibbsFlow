@@ -1,0 +1,5 @@
+Bayesian mixture model
+- Run reference SMC sampler using demo_ais.R 
+- Run demo_gibbsvelocity.R to investigate stiffness of ODE
+- Run run_gibbsflow_repeats.R to generate trajectories under the Gibbs flow and by combining Gibbs flow with HMC
+- Run analyze_gibbsflow_integration.R and plot_gibbsflow_results.R to generate the figures in the paper
